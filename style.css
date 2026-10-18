@@ -142,3 +142,30 @@ details[open]{border-color:#aec5d35c;background:#252d37}summary svg{color:#c0d2e
 .header-instagram:hover{background:#353d48;color:#f2f5f8}
 @media(min-width:701px){.header-instagram{margin-inline-start:-12px}}
 @media(max-width:380px){.header-inner{gap:7px}.header-inner .brand img{width:96px}.header .button.small{padding-inline:9px;font-size:11px;gap:5px}.header-instagram,.header .menu-toggle{width:34px;height:36px}}
+
+/* A compact request form that hands off to WhatsApp. */
+.booking-section{background:linear-gradient(135deg,#171b20,#111214);border-top:1px solid var(--line)}
+.booking-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:start}
+.booking-intro>p{color:var(--muted);font-size:16px;line-height:1.9;margin-top:18px;max-width:350px}
+.booking-photo-note{display:flex;gap:12px;align-items:flex-start;padding:17px 0;margin-top:15px;border-top:1px solid var(--line);color:#becbda;font-size:14px;max-width:350px}.booking-photo-note svg{margin-top:4px}
+.request-form{padding:26px;background:linear-gradient(145deg,#222830,#191d23);border:1px solid #c6d6e330;border-radius:12px;box-shadow:0 10px 30px #0002}
+.request-type{padding:0;margin:0 0 22px;border:0;min-width:0}.request-type legend{font-size:15px;font-weight:700;margin-bottom:10px}
+.request-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}.request-options label{position:relative;cursor:pointer}
+.request-options input{position:absolute;opacity:0;width:1px;height:1px}
+.request-options label>span{min-height:44px;display:flex;align-items:center;justify-content:center;gap:9px;border:1px solid #aebdce30;border-radius:7px;background:#161b22;color:#aebccb;font-size:15px;font-weight:700}
+.request-options input:checked+span{background:linear-gradient(115deg,#bcc7d4,#e0e6ed);color:#1c2633;border-color:#d9e4ef}
+.request-options input:focus-visible+span{outline:2px solid white;outline-offset:3px}
+.request-options svg{width:19px;height:19px}
+.request-fields{display:grid;grid-template-columns:1fr 1fr;gap:17px 14px}.form-field{min-width:0}.form-field.full{grid-column:1/-1}
+.form-field[hidden]{display:none}
+.form-field>label{display:flex;align-items:baseline;gap:9px;font-size:14px;font-weight:700;margin-bottom:6px}
+.form-field>label>span{font-size:11px;font-weight:400;color:#abb6c3}
+.form-field input,.form-field select,.form-field textarea{width:100%;min-width:0;min-height:44px;padding:10px 12px;border:1px solid #b8c9dd30;border-radius:6px;background:#14191f;color:#e7edf5;font:400 16px/1.5 Tajawal,Arial,sans-serif;color-scheme:dark;outline:none}
+.form-field input::placeholder,.form-field textarea::placeholder{color:#94a0af;opacity:1}
+.form-field select{padding-inline-end:26px}.form-field textarea{resize:vertical;min-height:76px}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:#b4c9e2;box-shadow:0 0 0 3px #b4c9e212}
+.request-hint{font-size:12px;line-height:1.8;color:#b2bfce;margin:18px 0 12px}
+.request-submit{width:100%;font-family:inherit;cursor:pointer}.request-submit>svg:last-child{margin-inline-start:auto}
+@media(max-width:900px){.booking-layout{gap:28px}.request-form{padding:22px}.header nav{gap:16px;font-size:13px}}
+@media(max-width:700px){.booking-layout{grid-template-columns:1fr;gap:20px}.booking-intro>p{font-size:14px;max-width:none;margin-top:12px}.booking-photo-note{font-size:12px;max-width:none;padding:12px 0 0;margin-top:12px}.request-form{padding:17px;border-radius:10px}.request-fields{gap:14px}.request-type{margin-bottom:18px}.request-options label>span{font-size:14px}.form-field>label{font-size:13px}.request-hint{font-size:11px}}
+@media(max-width:380px){.request-fields{grid-template-columns:1fr}.form-field.full{grid-column:auto}}

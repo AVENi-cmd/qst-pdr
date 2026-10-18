@@ -1,12 +1,67 @@
 'use strict';
 const whatsapp = 'https://wa.me/966540773038?text=';
-document.querySelectorAll('[data-wa], [data-service]').forEach(link => {
- const service = link.dataset.service;
- const message = service
-  ? `السلام عليكم كوالتي سمارت تاتش، أرغب بالاستفسار عن ${service}.\nنوع السيارة وموديلها: \nالوقت المناسب للتواصل: `
-  : 'السلام عليكم كوالتي سمارت تاتش، أرغب بحجز موعد لسيارتي.\nنوع السيارة وموديلها: \nالخدمة المطلوبة: \nالموعد المفضل: ';
- link.href = whatsapp + encodeURIComponent(message);
+const requestForm = document.querySelector('#request-form');
+const brandSelect = document.querySelector('#car-brand');
+const otherBrand = document.querySelector('#other-brand');
+const otherBrandField = document.querySelector('#other-brand-field');
+const inquiryText = document.querySelector('#inquiry-text');
+const inquiryField = document.querySelector('#inquiry-field');
+const requestHint = document.querySelector('#request-hint');
+function syncRequestFields() {
+ const inquiry = requestForm.elements.requestType.value === 'inquiry';
+ const other = brandSelect.value === 'other';
+ otherBrandField.hidden = !other;
+ otherBrand.disabled = !other;
+ otherBrand.required = other;
+ inquiryField.hidden = !inquiry;
+ inquiryText.disabled = !inquiry;
+ inquiryText.required = inquiry;
+ otherBrand.setCustomValidity('');
+ inquiryText.setCustomValidity('');
+ requestHint.textContent = inquiry
+  ? 'نجهّز رسالتك على واتساب. أرفق صور الصدمة هناك قبل الإرسال، إن وجدت.'
+  : 'طلب الحجز يُرسل عبر واتساب، ويؤكد المركز الموعد معك بعد التواصل.';
+}
+requestForm.addEventListener('change', syncRequestFields);
+[otherBrand, inquiryText].forEach(input => input.addEventListener('input', () => input.setCustomValidity('')));
+function buildRequestMessage(data) {
+ const clean = key => String(data[key] || '').trim();
+ const inquiry = clean('requestType') === 'inquiry';
+ const brand = clean('brand') === 'other' ? clean('otherBrand') : clean('brand');
+ const lines = [
+  inquiry ? 'السلام عليكم كوالتي سمارت تاتش، عندي استفسار عن خدماتكم.' : 'السلام عليكم كوالتي سمارت تاتش، أرغب بحجز موعد لسيارتي.',
+  'نوع السيارة وموديلها : ' + [brand, clean('model')].filter(Boolean).join(' — '),
+  'الخدمة المطلوبة : ' + clean('service')
+ ];
+ if (clean('location')) lines.push('مكان الصدمة : ' + clean('location'));
+ if (inquiry && clean('inquiry')) lines.push('الاستفسار : ' + clean('inquiry'));
+ if (clean('note')) lines.push('ملاحظة : ' + clean('note'));
+ lines.push('*يرجى ارفاق صور للصدمة وتوضيح مكانها إن وجدت*');
+ return lines.join('\n\n');
+}
+requestForm.addEventListener('submit', event => {
+ event.preventDefault();
+ if (otherBrand.required && !otherBrand.value.trim()) otherBrand.setCustomValidity('اكتب ماركة السيارة.');
+ if (inquiryText.required && !inquiryText.value.trim()) inquiryText.setCustomValidity('اكتب استفسارك.');
+ if (!requestForm.reportValidity()) return;
+ const data = Object.fromEntries(new FormData(requestForm));
+ window.location.assign(whatsapp + encodeURIComponent(buildRequestMessage(data)));
 });
+document.querySelectorAll('[data-wa], [data-service], [data-request-mode]').forEach(link => {
+ link.href = '#booking';
+ link.addEventListener('click', () => {
+  const service = link.dataset.service;
+  const mode = link.dataset.requestMode || (service && service !== 'الفحص المجاني' ? 'inquiry' : 'booking');
+  requestForm.elements.requestType.value = mode;
+  if (service) {
+   const select = requestForm.elements.service;
+   const exists = Array.from(select.options).some(option => option.value === service);
+   select.value = exists ? service : 'أحتاج مساعدة في اختيار الخدمة';
+  }
+  syncRequestFields();
+ });
+});
+syncRequestFields();
 
 const menuButton = document.querySelector('.menu-toggle');
 const menu = document.querySelector('#site-nav');
