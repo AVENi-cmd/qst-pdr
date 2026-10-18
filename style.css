@@ -67,3 +67,13 @@ details{transition:border-color .25s,background .25s}details[open]{border-color:
 .hero-visual img{aspect-ratio:4/3;height:auto;filter:none}
 .hero-visual{height:auto}
 }
+
+/* Service photographs remain decorative; foreground opacity is untouched. */
+.service-pdr{--service-photo:url('assets/service-pdr.webp')}
+.service-polish{--service-photo:url('assets/service-polish.webp')}
+.service-inspection{--service-photo:url('assets/service-inspection.webp')}
+.service-grid .service{background:#192025;isolation:isolate}
+.service-grid .service:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(90deg,rgba(13,18,22,.12),rgba(13,18,22,.76)),var(--service-photo);background-size:cover;background-position:center;opacity:.32}
+.service-grid .service p{color:#d0d6da}
+.service-grid .chips span,.service-grid .tag{background:#182027b8;border-color:#d0dce038;color:#dce5eb}
+.service-grid .service>a{border-top-color:#d8e4ec40}
