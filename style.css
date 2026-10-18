@@ -8,3 +8,36 @@
 .menu-toggle{display:none;align-items:center;justify-content:center;color:var(--text);background:transparent;border:1px solid #444;border-radius:6px;width:36px;height:36px;padding:6px;cursor:pointer;flex-shrink:0}.menu-toggle:focus-visible{outline:2px solid white;outline-offset:4px}.menu-toggle svg{width:20px;height:20px}section[id]{scroll-margin-top:12px}
 @media(max-width:700px){.header-inner{gap:10px}.header-inner>.button{margin-inline-start:auto}.menu-toggle{display:flex}.header nav{position:absolute;top:100%;left:16px;right:16px;display:none;background:#141414;border:1px solid #444;border-radius:8px;padding:8px;box-shadow:0 12px 30px #0008}.header nav.is-open{display:grid;grid-template-columns:1fr 1fr;gap:4px}.header nav a{padding:12px;font-size:14px;border-radius:4px;color:#eee}.header nav a:hover,.header nav a:focus-visible{background:#252525}.hero-actions .text-link{min-height:44px}.service>a{min-height:44px}.contact-grid>a{min-height:56px}}
 @media(max-width:360px){.brand img{width:100px}.header-inner{gap:8px}.button.small{font-size:11px;padding-inline:10px}.button.small svg{width:14px}.hero-actions{gap:12px}.hero-actions .button{padding-inline:12px;font-size:13px}.hero-actions .text-link{font-size:11px}.work-link{padding:14px;gap:10px}.work-link h3{font-size:15px}.work-monogram{width:38px}.rating-layout{grid-template-columns:96px minmax(0,1fr);gap:13px}.rating-section h2{font-size:20px}}
+
+/* Brushed silver: restrained highlights, transparent detailing and depth. */
+:root{--bg:#101112;--surface:#1b1e20;--line:#c9d3db26;--muted:#aeb5ba;--silver:#dce4e9}
+body{background:var(--bg)}
+.header{background:#101112f5;border-bottom-color:#d9e2e632;box-shadow:0 4px 22px #0002}
+.hero{background:radial-gradient(ellipse at 90% 10%,#b8c9d21c,transparent 60%)}
+.hero .eyebrow,.section .eyebrow{color:#bbc9d1}.hero .line{background:linear-gradient(90deg,transparent,#d8e6ed);box-shadow:0 0 12px #d0e2ee33}
+em,h2>span{color:#cad3da}
+@supports(background-clip:text){h1 em,.contact h2 em{background:linear-gradient(115deg,#9faeb8 5%,#f2f5f6 42%,#b0bec7 70%,#e2e8ec 95%);background-clip:text;-webkit-background-clip:text;color:transparent}}
+.hero-visual img{filter:saturate(.8)}
+.hero-visual:after{background:linear-gradient(270deg,#101112 0%,#10111275 24%,transparent 70%),linear-gradient(0deg,#101112,transparent 35%)}
+.button{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,#b5c0c8 0%,#f0f4f6 36%,#d5dfe5 66%,#acbac4 100%);box-shadow:inset 0 1px 0 #ffffffb3,0 4px 14px #0003;color:#172027;border:0;transition:box-shadow .25s,transform .25s}
+.button:after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(110deg,transparent 25%,#ffffff80 50%,transparent 75%);transform:translateX(130%);transition:transform .65s}
+.button:hover{background:linear-gradient(115deg,#c3cfd7,#f6f9fa 40%,#c4d1da);box-shadow:inset 0 1px 0 #fff,0 5px 20px #bdced526}
+.button:active{transform:translateY(1px)}
+.trust{background:linear-gradient(100deg,#1b2023,#252b2f 50%,#1b2023);border-color:#d9e3ea24}.trust-grid svg{color:#d8e2e9;filter:drop-shadow(0 0 7px #b9ced426)}
+.service,.work-link,details{background:linear-gradient(130deg,#bacbd30b,transparent 40%),linear-gradient(155deg,#252b2f,#191d20 75%);border-color:#d1dfe62c;box-shadow:inset 0 1px 0 #e8f1f619,0 8px 22px #0002}
+.service,.work-link{isolation:isolate;overflow:hidden}.service:before,.work-link:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(120deg,transparent 68%,#d9e6ed0b 68.2%,transparent 68.6%,transparent 79%,#d9e6ed08 79.2%,transparent 79.6%)}
+.work-link{position:relative}
+.service:after{content:'';position:absolute;top:0;left:18px;right:18px;height:1px;background:linear-gradient(90deg,transparent,#cddfe780,transparent);pointer-events:none}
+.service.featured{border-color:#bdcfdc70;background:radial-gradient(ellipse at 100% 0,#a8c0ce1c,transparent 70%),linear-gradient(150deg,#2c3439,#1b2024)}
+.card-top>svg{color:#d5e4ed;filter:drop-shadow(0 0 8px #c0d8e033)}.card-top>span{color:#9eb2c0}.tag{color:#e0ebf2;background:#b3c9d119;border:1px solid #bacee22b;border-radius:4px;padding:1px 7px}
+.chips span{background:#b6c9d20b;color:#c4d0d7;border-color:#bdcfd325}.service>a{border-top-color:#d5e0e326}.service>a svg,.text-link svg{color:#bbd0dd}
+.approach{background:radial-gradient(ellipse at 5% 50%,#a9c0ce0b,transparent 65%)}
+.process article>span,.circle,.menu-toggle,.call{background:linear-gradient(140deg,#333c43,#1b2024);border-color:#a4bdcd40;color:#d5e3ed;box-shadow:inset 0 1px 0 #d8e8ee1c}
+.work-monogram{box-shadow:0 0 0 3px #b9cfda1c,0 4px 18px #0003}
+.rating-section{background:linear-gradient(112deg,#242c31,#303b42 48%,#21292e);border-color:#c7dbe33b;box-shadow:inset 0 1px 0 #dfeaf012,inset 0 -1px 0 #dfeaf00d}
+.rating-big>strong{color:#eef3f6;text-shadow:0 2px 20px #bbd6e226}.stars{color:#d5c5a7}.rating-big .stars{color:#d5c5a7}.rating-big{border-color:#d0e0eb2e}
+details{transition:border-color .25s,background .25s}details[open]{border-color:#aec5d376;background:linear-gradient(145deg,#2a343b,#1c2328)}summary svg{color:#c6dce9}.contact{background:radial-gradient(ellipse at 90% 5%,#9fb8c51a,transparent 60%)}
+.contact-grid svg{color:#bfd1dd}.mobile-bar{background:#151a1ef5;border-top-color:#ccdae440;box-shadow:0 -4px 22px #0003}.header nav.is-open{background:linear-gradient(135deg,#252c31,#171d21);border-color:#b8ced448}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.service,.work-link{transition:transform .25s,border-color .25s,box-shadow .25s}.service:hover,.work-link:hover{transform:translateY(-3px);border-color:#c7dce166;box-shadow:inset 0 1px 0 #f1f8fc24,0 12px 26px #0004}.button:hover:after{transform:translateX(-130%)}}
+@media(max-width:700px){.hero-visual{box-shadow:0 0 0 1px #d0e0e32e,0 6px 20px #0003}.hero-visual:after{background:linear-gradient(0deg,#10111288,transparent 35%)}.hero-visual img{filter:saturate(.8)}.tag{margin-bottom:7px}.service:before{background:linear-gradient(120deg,transparent 76%,#d9e6ed0c 76.2%,transparent 76.8%,transparent 89%,#d9e6ed08 89.2%,transparent 89.8%)}}
+@media(prefers-reduced-motion:reduce){.button:after{display:none}*{transition:none!important}}
