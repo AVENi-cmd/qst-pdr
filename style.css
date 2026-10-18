@@ -77,3 +77,25 @@ details{transition:border-color .25s,background .25s}details[open]{border-color:
 .service-grid .service p{color:#d0d6da}
 .service-grid .chips span,.service-grid .tag{background:#182027b8;border-color:#d0dce038;color:#dce5eb}
 .service-grid .service>a{border-top-color:#d8e4ec40}
+
+/* Neutral storefront grading, preserving all original photo details. */
+.hero-visual img{filter:saturate(.34) brightness(.92) contrast(1.04)}
+.hero-visual:after{background:linear-gradient(180deg,rgba(155,174,185,.07),transparent 40%,rgba(13,18,22,.24));pointer-events:none}
+/* Lighter portfolio framing with labels placed directly on each photo. */
+.result-card{border:0;background:transparent;box-shadow:none;border-radius:0;overflow:visible}
+.result-open{position:relative;border-radius:12px;overflow:hidden;border:1px solid #d7e0e226;box-shadow:0 6px 20px #0002}
+.result-open .result-labels{position:absolute;inset:auto 0 0;background:linear-gradient(0deg,#0b1012b8,transparent);border:0;padding:26px 10px 12px;gap:12px;pointer-events:none}
+.result-open .result-labels>span{padding:4px 12px;justify-self:center;border:1px solid #e0e8ee38;border-radius:5px;background:#172026e8;color:#edf2f5;font-size:12px;font-weight:700}
+.result-open .result-labels>span:last-child{background:#dce4e9;color:#192128;border-color:#f1f4f6}
+.zoom-mark{top:10px;left:10px;width:28px;height:28px;border-radius:50%;background:#12191fc9;border-color:#e7eef640}
+.zoom-mark svg{width:14px;height:14px}
+.result-caption{padding:12px 2px 16px;border:0;justify-content:center}
+.result-caption h3{font-size:15px;font-weight:400;color:#c5cfd5}
+.results-gallery{gap:24px}
+@media(max-width:700px){
+.results-gallery{gap:16px;scroll-snap-type:x mandatory;scroll-padding-inline:0;padding:0 0 7px;scrollbar-width:thin}
+.result-card{flex-basis:100%;scroll-snap-align:start;scroll-snap-stop:always}
+.result-caption{padding:11px 0 9px}.result-caption h3{font-size:14px}
+.gallery-guidance{font-size:10px;gap:8px}
+.header .button.small{gap:7px}.header .button.small svg{width:17px;height:17px}
+}
