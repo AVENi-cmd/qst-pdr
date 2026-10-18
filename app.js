@@ -32,3 +32,29 @@ document.addEventListener('click', event => {
 window.matchMedia('(min-width:701px)').addEventListener('change', event => {
  if (event.matches) closeMenu();
 });
+
+const photoDialog = document.querySelector('.result-dialog');
+const photoImage = photoDialog.querySelector('img');
+const photoFrame = photoDialog.querySelector('.result-frame');
+const photoTitle = document.querySelector('#result-title');
+let photoTrigger = null;
+document.querySelectorAll('.result-open').forEach(button => {
+ button.addEventListener('click', () => {
+  photoTrigger = button;
+  photoImage.src = button.dataset.photo;
+  photoImage.alt = button.dataset.title + '، قبل الإصلاح على اليسار وبعده على اليمين';
+  photoFrame.style.aspectRatio = button.dataset.ratio;
+  photoTitle.textContent = button.dataset.title;
+  photoDialog.showModal();
+  document.body.classList.add('photo-open');
+ });
+});
+photoDialog.querySelector('.result-close').addEventListener('click', () => photoDialog.close());
+photoDialog.addEventListener('click', event => {
+ const bounds = photoDialog.getBoundingClientRect();
+ if (event.target === photoDialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) photoDialog.close();
+});
+photoDialog.addEventListener('close', () => {
+ document.body.classList.remove('photo-open');
+ if (photoTrigger) photoTrigger.focus();
+});
