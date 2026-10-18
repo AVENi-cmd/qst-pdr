@@ -51,7 +51,7 @@ document.querySelectorAll('[data-wa], [data-service], [data-request-mode]').forE
  link.href = '#booking';
  link.addEventListener('click', () => {
   const service = link.dataset.service;
-  const mode = link.dataset.requestMode || (service && service !== 'الفحص المجاني' ? 'inquiry' : 'booking');
+  const mode = link.dataset.requestMode || (service && service !== 'تشييك على السيارة' ? 'inquiry' : 'booking');
   requestForm.elements.requestType.value = mode;
   if (service) {
    const select = requestForm.elements.service;
