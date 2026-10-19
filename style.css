@@ -240,5 +240,5 @@ details[open]{border-color:#aec5d35c;background:#252d37}summary svg{color:#c0d2e
 .request-form .form-field input::placeholder,.request-form .form-field textarea::placeholder{color:#a5aab4}
 
 /* Original storefront photograph: light, neutral treatment. */
-.hero-visual img{filter:saturate(.68) contrast(1.02);aspect-ratio:4/3;height:auto;object-fit:contain}
+.hero-visual img{filter:none;aspect-ratio:4/3;height:auto;object-fit:contain}
 .hero-visual:after{background:linear-gradient(0deg,rgba(17,18,20,.22),transparent 22%);pointer-events:none}
