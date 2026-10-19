@@ -174,3 +174,14 @@ details[open]{border-color:#aec5d35c;background:#252d37}summary svg{color:#c0d2e
 .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .service-grid .service-interior:before{background-image:linear-gradient(125deg,transparent 55%,#a9bdd012 55.3%,transparent 56%,transparent 75%,#a9bdd010 75.3%,transparent 76%);opacity:1}
 @media(max-width:700px){.service-grid{grid-template-columns:1fr}}
+
+/* Photo instructions sit directly above the form at every viewport. */
+.booking-form-panel{min-width:0}
+.booking-photo-notice{display:flex;align-items:flex-start;gap:14px;margin-bottom:15px;padding:20px;background:linear-gradient(125deg,#34404d,#252e38);border:1px solid #b6cadb66;border-inline-start:3px solid #cbdbe9;border-radius:10px;box-shadow:0 5px 18px #0002}
+.photo-notice-icon{display:grid;place-items:center;width:42px;height:42px;flex-shrink:0;border-radius:9px;background:#d8e4ef16;border:1px solid #c4d5e336;color:#e0ebf5}
+.photo-notice-icon svg{width:24px;height:24px}
+.booking-photo-notice strong{display:block;font-size:18px;line-height:1.5;color:#f3f6fa}
+.booking-photo-notice p{font-size:16px;line-height:1.85;color:#dce5ee;margin-top:7px}
+.booking-photo-notice b{font-weight:700;color:#f3f6fa}
+.photo-notice-caption{display:block;font-size:12px;line-height:1.7;color:#bdccda;margin-top:8px}
+@media(max-width:700px){.booking-photo-notice{padding:16px 14px;gap:11px;margin-bottom:12px}.photo-notice-icon{width:34px;height:34px;border-radius:7px}.photo-notice-icon svg{width:21px;height:21px}.booking-photo-notice strong{font-size:16px}.booking-photo-notice p{font-size:15px}.photo-notice-caption{font-size:12px}}
