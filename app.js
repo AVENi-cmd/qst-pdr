@@ -10,6 +10,10 @@ const requestHint = document.querySelector('#request-hint');
 function syncRequestFields() {
  const inquiry = requestForm.elements.requestType.value === 'inquiry';
  const other = brandSelect.value === 'other';
+ brandSelect.required = !inquiry;
+ requestForm.elements.service.required = !inquiry;
+ document.querySelector('#brand-required-label').textContent = inquiry ? 'اختياري' : 'مطلوب';
+ document.querySelector('#service-required-label').textContent = inquiry ? 'اختياري' : 'مطلوب';
  otherBrandField.hidden = !other;
  otherBrand.disabled = !other;
  otherBrand.required = other;
@@ -29,10 +33,11 @@ function buildRequestMessage(data) {
  const inquiry = clean('requestType') === 'inquiry';
  const brand = clean('brand') === 'other' ? clean('otherBrand') : clean('brand');
  const lines = [
-  inquiry ? 'السلام عليكم كوالتي سمارت تاتش، عندي استفسار عن خدماتكم.' : 'السلام عليكم كوالتي سمارت تاتش، أرغب بحجز موعد لسيارتي.',
-  'نوع السيارة وموديلها : ' + [brand, clean('model')].filter(Boolean).join(' — '),
-  'الخدمة المطلوبة : ' + clean('service')
+  inquiry ? 'السلام عليكم كوالتي سمارت تاتش، عندي استفسار عن خدماتكم.' : 'السلام عليكم كوالتي سمارت تاتش، أرغب بحجز موعد لسيارتي.'
  ];
+ const car = [brand, clean('model')].filter(Boolean).join(' — ');
+ if (car) lines.push('نوع السيارة وموديلها : ' + car);
+ if (clean('service')) lines.push('الخدمة المطلوبة : ' + clean('service'));
  if (clean('location')) lines.push('مكان الصدمة : ' + clean('location'));
  if (inquiry && clean('inquiry')) lines.push('الاستفسار : ' + clean('inquiry'));
  if (clean('note')) lines.push('ملاحظة : ' + clean('note'));
