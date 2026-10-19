@@ -169,3 +169,8 @@ details[open]{border-color:#aec5d35c;background:#252d37}summary svg{color:#c0d2e
 @media(max-width:900px){.booking-layout{gap:28px}.request-form{padding:22px}.header nav{gap:16px;font-size:13px}}
 @media(max-width:700px){.booking-layout{grid-template-columns:1fr;gap:20px}.booking-intro>p{font-size:14px;max-width:none;margin-top:12px}.booking-photo-note{font-size:12px;max-width:none;padding:12px 0 0;margin-top:12px}.request-form{padding:17px;border-radius:10px}.request-fields{gap:14px}.request-type{margin-bottom:18px}.request-options label>span{font-size:14px}.form-field>label{font-size:13px}.request-hint{font-size:11px}}
 @media(max-width:380px){.request-fields{grid-template-columns:1fr}.form-field.full{grid-column:auto}}
+
+/* Independent interior and exterior polishing cards. */
+.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.service-grid .service-interior:before{background-image:linear-gradient(125deg,transparent 55%,#a9bdd012 55.3%,transparent 56%,transparent 75%,#a9bdd010 75.3%,transparent 76%);opacity:1}
+@media(max-width:700px){.service-grid{grid-template-columns:1fr}}
