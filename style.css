@@ -206,3 +206,22 @@ details[open]{border-color:#aec5d35c;background:#252d37}summary svg{color:#c0d2e
 .header nav a:hover,.header nav a:focus-visible{background:#bdcee710;border-color:#bfd4ef25}
 .header .menu-toggle[aria-expanded="true"]{background:#cbd7e5;color:#1b2634;border-color:#dce7f3}
 }
+
+/* Booking panel: graphite, silver and a restrained warm accent. */
+.request-form{position:relative;overflow:hidden;background:radial-gradient(ellipse at 100% 0,rgba(193,161,114,.10),transparent 38%),linear-gradient(150deg,#282a2e,#1a1c20 65%);border:1px solid #d6c3a63b;border-radius:16px;box-shadow:0 16px 42px #0003,inset 0 1px 0 #ffffff0d}
+.request-form:before{content:"";position:absolute;top:0;inset-inline:24px;height:2px;background:linear-gradient(90deg,transparent,#b9a17c,#d6dce3,transparent);pointer-events:none}
+.request-intro{display:flex;align-items:center;gap:12px;padding-bottom:19px;margin-bottom:20px;border-bottom:1px solid #ffffff12}
+.request-intro-icon{display:grid;place-items:center;flex:none;width:42px;height:42px;border-radius:12px;background:#bba17b12;border:1px solid #bba17b40;color:#d1ba96}
+.request-intro-icon svg{width:21px;height:21px}.request-eyebrow{font-size:11px;font-weight:700;color:#d1ba96;letter-spacing:.2px}.request-intro p{margin:5px 0 0;font-size:14px;font-weight:500;color:#e6e8eb;line-height:1.7}
+.request-options{padding:5px;border:1px solid #ffffff12;border-radius:12px;background:#11131588;gap:6px}
+.request-options label>span{border:1px solid transparent;border-radius:8px;background:transparent;min-height:48px}
+.request-options input:checked+span{background:linear-gradient(120deg,#bdc4cc,#e2e5e9);border-color:#e8ecf0;box-shadow:0 3px 10px #0003;color:#24282e}
+.form-section-title{grid-column:1/-1;display:flex;align-items:center;gap:9px;color:#d8c6aa;font-size:12px;font-weight:700;margin:2px 0 0}
+.form-section-title:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,#bba17b38)}
+.form-section-title>span{font-size:10px;font-weight:500;color:#c6b292;border:1px solid #bba17b35;border-radius:6px;padding:3px 6px}
+.request-form .form-field input,.request-form .form-field select,.request-form .form-field textarea{background:#121417b3;border-color:#c4ccd629;border-radius:9px;box-shadow:inset 0 1px 3px #0002}
+.request-form .form-field input:focus,.request-form .form-field select:focus,.request-form .form-field textarea:focus{border-color:#c5ae88;box-shadow:0 0 0 3px #c5ae8814}
+.request-form .form-field>label>span{font-size:10px;padding:1px 6px;border-radius:4px;background:#ffffff06;color:#acb1ba}
+.request-form .request-hint{padding:12px 13px;border-inline-start:2px solid #baa17b80;background:#bba17b08;border-radius:7px;color:#c4c8ce}
+.request-form .request-submit{border-radius:9px;min-height:48px}
+@media(max-width:700px){.request-form{padding:18px 15px;border-radius:14px}.request-intro{gap:10px;margin-bottom:17px;padding-bottom:15px}.request-intro p{font-size:12px}.request-eyebrow{font-size:10px}.request-intro-icon{width:36px;height:36px}.request-type legend{font-size:14px}.form-section-title{font-size:11px}}
